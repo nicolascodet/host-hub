@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#111827"/>
+  
+  <!-- Aether/Mind Symbol -->
+  <g>
+    <!-- 'A' for Aether -->
+    <path d="M183 128L128 384H168L188 320H276L296 384H336L281 128H183ZM202 152H262L294 360H318L232 152H202Z" fill="#6366F1"/>
+    
+    <!-- 'M' for Mind -->
+    <path d="M158 290L198 200L238 290L278 200L318 290V360H278V320L258 290L218 380L178 290L158 320V360H118V290L158 290Z" fill="#EC4899"/>
+    
+    <!-- Connection Line (Joining the A and M) -->
+    <path d="M158 290H318" stroke="#8B5CF6" stroke-width="8"/>
+  </g>
+</svg>
