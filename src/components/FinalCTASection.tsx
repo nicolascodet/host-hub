@@ -1,69 +1,65 @@
+"use client"
+
 import React from 'react';
 import Link from 'next/link';
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto bg-gray-900/70 backdrop-blur-xl rounded-2xl p-12 border border-gray-800 shadow-2xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to simplify your AI deployment?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join hundreds of startups who are shipping AI faster with AIHostHub.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link href="#"
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-gray-900 font-medium px-8 py-4 rounded-lg text-center transition-colors text-lg">
-              Start Free Trial
-            </Link>
-            <Link href="#"
-              className="w-full sm:w-auto bg-transparent text-white border border-gray-700 hover:border-primary hover:bg-gray-800/50 font-medium px-8 py-4 rounded-lg text-center transition-all text-lg">
-              Schedule Demo
-            </Link>
-          </div>
-          
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
-                <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Free to start</h3>
-                <p className="text-sm text-gray-400">No credit card required</p>
-              </div>
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 overflow-hidden shadow-xl">
+          <div className="p-6 sm:p-10">
+            <div className="text-center mb-8 sm:mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                Ready to simplify your AI deployment?
+              </h2>
+              <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+                Join hundreds of startups who are deploying AI models without DevOps expertise. 
+                Get started with AetherMind today.
+              </p>
             </div>
             
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
-                <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Easy setup</h3>
-                <p className="text-sm text-gray-400">Deploy in minutes, not days</p>
-              </div>
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link 
+                href="#" 
+                className="w-full sm:w-auto px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition-colors text-center"
+              >
+                Start Free Trial
+              </Link>
+              <Link 
+                href="#" 
+                className="w-full sm:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-md transition-colors text-center"
+              >
+                Schedule Demo
+              </Link>
             </div>
             
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
-                <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            <div className="mt-8 sm:mt-10 text-center">
+              <p className="text-gray-400 text-sm">
+                No credit card required. 14-day free trial. Cancel anytime.
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-gray-800/80 border-t border-gray-700 p-4 sm:p-6 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+              <div className="flex items-center">
+                <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
+                <span className="text-gray-300 text-sm">One-command deployment</span>
               </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Secure & reliable</h3>
-                <p className="text-sm text-gray-400">Enterprise-grade infrastructure</p>
+              <div className="flex items-center">
+                <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-gray-300 text-sm">Automated scaling</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-gray-300 text-sm">24/7 monitoring</span>
               </div>
             </div>
           </div>

@@ -1,72 +1,89 @@
+"use client"
+
 import React from 'react';
 import Image from 'next/image';
 
-const testimonials = [
-  {
-    quote: "AIHostHub cut our model deployment time from days to minutes. We're now iterating faster than ever before.",
-    author: "Sarah Chen",
-    title: "CTO, NeuroVision AI",
-    image: "/avatar1.png"
-  },
-  {
-    quote: "Our small team was spending 40% of our time on infrastructure. AIHostHub gave us that time back to focus on our core product.",
-    author: "Marcus Johnson",
-    title: "Lead ML Engineer, Textify",
-    image: "/avatar2.png"
-  },
-  {
-    quote: "The cost predictability alone was worth the switch. No more surprise cloud bills - just reliable AI hosting that works.",
-    author: "Priya Sharma",
-    title: "Founder, HealthPredict",
-    image: "/avatar3.png"
-  }
-];
-
 export const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      quote: "AetherMind cut our AI deployment time from weeks to minutes. The automated scaling has saved us thousands in infrastructure costs.",
+      author: "Sarah Chen",
+      title: "CTO, NeuralVision",
+      avatar: "/avatars/avatar-1.jpg"
+    },
+    {
+      quote: "As a small startup with no DevOps team, AetherMind was a game-changer. We can now focus on our models instead of infrastructure.",
+      author: "Michael Rodriguez",
+      title: "Lead AI Engineer, Sentient AI",
+      avatar: "/avatars/avatar-2.jpg"
+    },
+    {
+      quote: "The compliance templates saved us months of security work. Getting SOC 2 compliance was seamless with AetherMind.",
+      author: "Jessica Williams",
+      title: "Head of AI, HealthTech Solutions",
+      avatar: "/avatars/avatar-3.jpg"
+    }
+  ];
+
   return (
-    <section className="py-20 bg-gray-900/30" id="testimonials">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-800 to-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">From Our Users</h2>
-          <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto">
-            See how startups are accelerating their AI development with AIHostHub
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+            Trusted by AI Teams
+          </h2>
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+            See what our customers are saying about their experience with AetherMind.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-xl">
-              <div className="flex items-center mb-4">
-                <div className="h-12 w-12 rounded-full bg-gray-700 overflow-hidden flex items-center justify-center">
-                  <span className="text-lg font-bold text-primary">{testimonial.author.charAt(0)}</span>
-                </div>
-                <div className="ml-4">
-                  <p className="font-medium text-white">{testimonial.author}</p>
-                  <p className="text-sm text-gray-400">{testimonial.title}</p>
-                </div>
+            <div 
+              key={index}
+              className="bg-gray-800/30 backdrop-blur-sm rounded-lg p-6 sm:p-8 border border-gray-700 flex flex-col h-full"
+            >
+              <div className="mb-6">
+                <svg className="h-8 w-8 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-gray-300 italic">{testimonial.quote}</p>
               </div>
-              <p className="text-gray-300 italic">&ldquo;{testimonial.quote}&rdquo;</p>
-              <div className="mt-4 flex">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                ))}
+              <div className="mt-auto flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 border border-gray-600">
+                  <Image 
+                    src={testimonial.avatar} 
+                    alt={testimonial.author}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">{testimonial.author}</h4>
+                  <p className="text-gray-400 text-sm">{testimonial.title}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
-        
-        <div className="mt-16 text-center">
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join the growing community of startups using AIHostHub to simplify their AI infrastructure
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
-            <div className="text-lg font-medium text-gray-400">TechStartupX</div>
-            <div className="text-lg font-medium text-gray-400">AIVentures</div>
-            <div className="text-lg font-medium text-gray-400">DataSmart</div>
-            <div className="text-lg font-medium text-gray-400">NeuralWorks</div>
-            <div className="text-lg font-medium text-gray-400">+ 100 more</div>
+
+        <div className="mt-16 sm:mt-20 text-center">
+          <div className="inline-flex flex-wrap justify-center gap-8 items-center">
+            <div className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Image src="/logos/logo-1.svg" alt="Company logo" width={120} height={40} />
+            </div>
+            <div className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Image src="/logos/logo-2.svg" alt="Company logo" width={120} height={40} />
+            </div>
+            <div className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Image src="/logos/logo-3.svg" alt="Company logo" width={120} height={40} />
+            </div>
+            <div className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Image src="/logos/logo-4.svg" alt="Company logo" width={120} height={40} />
+            </div>
+            <div className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Image src="/logos/logo-5.svg" alt="Company logo" width={120} height={40} />
+            </div>
           </div>
         </div>
       </div>

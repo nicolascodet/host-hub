@@ -1,105 +1,133 @@
+"use client"
+
 import React from 'react';
-import Image from 'next/image';
+import { LuBrain, LuZap, LuShield, LuChartBar, LuServer, LuCode } from 'react-icons/lu';
 
 export const ProblemSolutionSection = () => {
+  const features = [
+    {
+      icon: <LuZap className="h-6 w-6 text-primary" />,
+      title: 'One-Command Deployment',
+      description: 'Deploy your AI models with a single command without complex configurations or DevOps expertise.'
+    },
+    {
+      icon: <LuServer className="h-6 w-6 text-primary" />,
+      title: 'Automated Scaling',
+      description: 'Infrastructure automatically scales up or down based on your usage patterns to optimize costs.'
+    },
+    {
+      icon: <LuBrain className="h-6 w-6 text-primary" />,
+      title: 'Pre-configured AI Environments',
+      description: 'Ready-to-use environments for PyTorch, TensorFlow, and Hugging Face with optimized dependencies.'
+    },
+    {
+      icon: <LuChartBar className="h-6 w-6 text-primary" />,
+      title: 'Simple Dashboard Monitoring',
+      description: 'User-friendly interface to monitor model performance, usage metrics, and costs in real-time.'
+    },
+    {
+      icon: <LuShield className="h-6 w-6 text-primary" />,
+      title: 'Compliance Templates',
+      description: 'Pre-configured security settings to help meet HIPAA, GDPR, and other compliance requirements.'
+    },
+    {
+      icon: <LuCode className="h-6 w-6 text-primary" />,
+      title: 'API Key Management',
+      description: 'Simple interface for creating, monitoring, and revoking access to your AI models.'
+    }
+  ];
+
   return (
-    <section className="py-20 relative overflow-hidden" id="features">
+    <section id="features" className="py-16 sm:py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* The Problem */}
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800 shadow-xl">
-            <h2 className="text-3xl font-bold mb-6">The Problem</h2>
-            <div className="space-y-6">
-              <div className="flex">
-                <div className="flex-shrink-0 h-12 w-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="h-6 w-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Complex cloud configuration</h3>
-                  <p className="text-gray-400">Navigating infrastructure setup requires specialized skills most AI teams don't have</p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 h-12 w-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="h-6 w-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Unpredictable costs</h3>
-                  <p className="text-gray-400">Unexpected cloud bills that can spiral out of control, especially during traffic spikes</p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 h-12 w-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="h-6 w-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Performance optimization headaches</h3>
-                  <p className="text-gray-400">Tuning infrastructure for AI inference requires deep knowledge of both ML and DevOps</p>
-                </div>
-              </div>
-            </div>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+            AI Deployment Simplified
+          </h2>
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+            AetherMind eliminates the complexity of deploying AI models so you can focus on building great AI products.
+          </p>
+        </div>
+
+        {/* Problem/Solution Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
+          {/* Problem Card */}
+          <div className="bg-gray-800/50 rounded-lg p-6 sm:p-8 border border-gray-700 h-full">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">The Problem</h3>
+            <ul className="space-y-4 text-gray-300">
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Deploying AI models requires DevOps expertise most startups don't have</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Cloud costs can spiral out of control with inefficient infrastructure</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Setting up monitoring, scaling, and security takes weeks of engineering time</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Managing dependencies and environment configurations is error-prone</span>
+              </li>
+            </ul>
           </div>
-          
-          {/* The Solution */}
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800 shadow-xl">
-            <h2 className="text-3xl font-bold mb-6">Our Solution</h2>
-            <p className="text-gray-300 text-lg mb-6">
-              AetherMind manages the infrastructure so you can focus on building AI
-            </p>
-            
-            <div className="bg-gray-800/70 rounded-lg p-4 font-mono text-sm mb-6">
-              <p className="text-gray-300"><span className="text-primary">$</span> aethermind deploy mymodel</p>
-              <p className="text-gray-400 mt-2">Model URL: https://api.aethermind.com/models/mymodel</p>
-              <p className="text-gray-400">API Key: ********-****-****-****-************</p>
-              <p className="text-green-400 mt-2">Model deployed and ready to serve</p>
-            </div>
-            
-            <div className="flex flex-wrap gap-4 mt-8">
-              <div className="flex items-center">
-                <div className="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center mr-2">
-                  <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-sm text-gray-300">One-command deployment</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center mr-2">
-                  <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-sm text-gray-300">Automated scaling</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center mr-2">
-                  <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-sm text-gray-300">Predictable pricing</span>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center mr-2">
-                  <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-sm text-gray-300">Performance optimization</span>
-              </div>
-            </div>
+
+          {/* Solution Card */}
+          <div className="bg-gray-800/50 rounded-lg p-6 sm:p-8 border border-gray-700 h-full">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Our Solution</h3>
+            <ul className="space-y-4 text-gray-300">
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Deploy any AI model with a single command - no DevOps knowledge required</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Automatic scaling optimizes costs by matching resources to actual usage</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Built-in monitoring, security, and compliance features work out of the box</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Pre-configured environments ensure consistent performance across deployments</span>
+              </li>
+            </ul>
           </div>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700 rounded-lg p-6 transition-all duration-300"
+            >
+              <div className="bg-gray-800/80 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{feature.title}</h3>
+              <p className="text-gray-400">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
